@@ -12,15 +12,19 @@ import {
   Zap
 } from 'lucide-react'
 
-const Home: React.FC = () => {
+interface HomeProps {
+  onSectionChange: (section: string) => void
+}
+
+const Home: React.FC<HomeProps> = ({ onSectionChange }) => {
   const summaryCards = [
     {
       id: 'education',
       title: '教育经历',
-      description: '播音主持专业背景，河北省播音联考通过，大学期间担任团支部书记',
+      description: '航空服务与管理专业背景，具备专业的服务技能和管理能力',
       icon: GraduationCap,
       color: 'from-blue-500 to-cyan-500',
-      stats: ['2020年播音联考', '团支部书记', '优秀毕业生']
+      stats: ['航空服务专业', '管理技能', '服务理念']
     },
     {
       id: 'experience',
@@ -41,10 +45,10 @@ const Home: React.FC = () => {
   ]
 
   const achievements = [
-    { icon: Award, text: '河北省优秀毕业生', color: 'text-yellow-500' },
+    { icon: Award, text: '航空服务专业毕业', color: 'text-yellow-500' },
     { icon: Star, text: '英语四六级证书', color: 'text-blue-500' },
     { icon: Target, text: '作业帮销售培训', color: 'text-green-500' },
-    { icon: Users, text: '团支部书记职务', color: 'text-purple-500' }
+    { icon: Users, text: '服务管理技能', color: 'text-purple-500' }
   ]
 
   return (
@@ -67,7 +71,7 @@ const Home: React.FC = () => {
                 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6"
               >
                 你好，我是
-                <span className="gradient-text block mt-2">张三</span>
+                <span className="gradient-text block mt-2">付恒</span>
               </motion.h1>
               
               <motion.p
@@ -76,8 +80,8 @@ const Home: React.FC = () => {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed"
               >
-                专业的前端开发工程师，拥有丰富的设计经验和销售能力。
-                从播音主持到技术开发，从设计创作到团队管理，我始终追求卓越和创新。
+                专业的航空服务与管理专业毕业生，拥有丰富的服务经验和团队管理能力。
+                从航空服务到销售管理，从客户服务到团队协作，我始终追求卓越和创新。
               </motion.p>
 
               <motion.div
@@ -150,7 +154,10 @@ const Home: React.FC = () => {
                   viewport={{ once: true }}
                   className="group relative"
                 >
-                  <div className="glass-effect rounded-2xl p-8 h-full card-hover cursor-pointer">
+                  <div 
+                    className="glass-effect rounded-2xl p-8 h-full card-hover cursor-pointer"
+                    onClick={() => onSectionChange(card.id)}
+                  >
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${card.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
@@ -202,10 +209,10 @@ const Home: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Zap, title: '快速学习', desc: '从播音主持到技术开发，快速适应新领域' },
+              { icon: Zap, title: '快速学习', desc: '从航空服务到销售管理，快速适应新领域' },
               { icon: Target, title: '目标导向', desc: '清晰的职业规划，持续追求卓越' },
               { icon: Users, title: '团队协作', desc: '丰富的团队管理经验，善于沟通协调' },
-              { icon: Code2, title: '创新思维', desc: '结合设计与技术，创造独特价值' }
+              { icon: Code2, title: '服务理念', desc: '专业的服务技能，创造客户价值' }
             ].map((item, index) => {
               const Icon = item.icon
               return (

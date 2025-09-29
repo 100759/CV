@@ -9,30 +9,34 @@ import {
   Trophy
 } from 'lucide-react'
 
-const Education: React.FC = () => {
+interface EducationProps {
+  onSectionChange?: (section: string) => void
+}
+
+const Education: React.FC<EducationProps> = ({ onSectionChange }) => {
   const educationData = [
     {
-      period: '2018-2022',
+      period: '2020-2024',
       level: '大学本科',
-      school: '河北师范大学',
-      major: '播音与主持艺术专业',
+      school: '河北外国语学院',
+      major: '航空服务与管理专业',
       location: '河北省石家庄市',
       gpa: '3.8/4.0',
       achievements: [
-        '担任团支部书记职务，管理班级事务，组织各类活动',
-        '获得河北省优秀毕业生称号，专业成绩优异',
+        '系统学习航空服务与管理专业知识，掌握行业核心技能',
+        '获得优秀毕业生称号，专业成绩优异',
         '通过英语四六级考试（CET-4: 580分，CET-6: 520分）',
-        '参与新校区建设相关工作，负责视觉设计和宣传工作',
-        '2020年通过河北省播音联考，专业排名前10%'
+        '参与航空服务实训，掌握专业服务技能',
+        '具备良好的服务意识和团队协作能力'
       ],
       highlights: [
-        '设计展板、logo、书籍封面等视觉作品，展现创意设计能力',
-        '组织班级活动，提升团队凝聚力，培养领导能力',
-        '参与校园文化建设，策划文艺活动，丰富校园生活',
-        '担任学生会宣传部部长，负责宣传工作，提升沟通协调能力',
-        '主持各类校园活动，积累丰富的舞台经验和表达能力'
+        '参与航空服务实训，掌握专业的客户服务技能',
+        '学习航空安全管理知识，具备风险识别和处理能力',
+        '参与机场服务模拟训练，提升实际操作能力',
+        '学习航空英语，具备良好的国际交流能力',
+        '培养专业的服务礼仪和沟通表达能力'
       ],
-      skills: ['播音主持', '视觉设计', '活动策划', '团队管理', '语言表达', '舞台表演'],
+      skills: ['航空服务', '客户管理', '安全管理', '团队协作', '语言表达', '服务礼仪'],
       type: 'university',
       color: 'from-blue-500 to-cyan-500',
       duration: '4年',
@@ -42,16 +46,16 @@ const Education: React.FC = () => {
 
   const certificates = [
     { 
-      name: '河北省优秀毕业生', 
-      year: '2022', 
+      name: '优秀毕业生', 
+      year: '2024', 
       icon: Trophy, 
       color: 'text-yellow-500',
       bgColor: 'from-yellow-400 to-orange-500',
-      description: '省级荣誉称号'
+      description: '校级荣誉称号'
     },
     { 
       name: '英语四级证书', 
-      year: '2020', 
+      year: '2022', 
       icon: Award, 
       color: 'text-blue-500',
       bgColor: 'from-blue-400 to-cyan-500',
@@ -59,19 +63,19 @@ const Education: React.FC = () => {
     },
     { 
       name: '英语六级证书', 
-      year: '2021', 
+      year: '2023', 
       icon: Award, 
       color: 'text-green-500',
       bgColor: 'from-green-400 to-emerald-500',
       description: 'CET-6: 520分'
     },
     { 
-      name: '河北省播音联考', 
-      year: '2020', 
+      name: '航空服务技能证书', 
+      year: '2023', 
       icon: Star, 
       color: 'text-purple-500',
       bgColor: 'from-purple-400 to-pink-500',
-      description: '专业排名前10%'
+      description: '专业技能认证'
     }
   ]
 
@@ -310,8 +314,8 @@ const Education: React.FC = () => {
               </div>
               <h3 className="text-3xl font-bold text-slate-800 mb-4">学习成果总结</h3>
               <p className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-                通过系统的专业学习和丰富的实践经历，我不仅掌握了扎实的专业技能，
-                更培养了良好的组织协调能力和创新思维，为后续的职业发展奠定了坚实基础。
+                通过系统的航空服务与管理专业学习和丰富的实践经历，我不仅掌握了扎实的服务技能，
+                更培养了良好的团队协作能力和服务意识，为后续的职业发展奠定了坚实基础。
               </p>
               
               <div className="grid md:grid-cols-4 gap-6">
@@ -334,9 +338,9 @@ const Education: React.FC = () => {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-4xl font-bold text-accent-600 mb-2">3年</div>
-                  <div className="text-slate-600 font-medium">团支部书记</div>
-                  <div className="text-sm text-slate-500 mt-1">管理经验</div>
+                  <div className="text-4xl font-bold text-accent-600 mb-2">4年</div>
+                  <div className="text-slate-600 font-medium">专业学习</div>
+                  <div className="text-sm text-slate-500 mt-1">航空服务</div>
                 </motion.div>
                 
                 <motion.div
@@ -358,9 +362,9 @@ const Education: React.FC = () => {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-4xl font-bold text-purple-600 mb-2">10%</div>
-                  <div className="text-slate-600 font-medium">联考排名</div>
-                  <div className="text-sm text-slate-500 mt-1">专业前10%</div>
+                  <div className="text-4xl font-bold text-purple-600 mb-2">6+</div>
+                  <div className="text-slate-600 font-medium">核心技能</div>
+                  <div className="text-sm text-slate-500 mt-1">专业能力</div>
                 </motion.div>
               </div>
             </div>

@@ -17,7 +17,11 @@ import {
   Star
 } from 'lucide-react'
 
-const Skills: React.FC = () => {
+interface SkillsProps {
+  onSectionChange?: (section: string) => void
+}
+
+const Skills: React.FC<SkillsProps> = ({ onSectionChange }) => {
   const [activeCategory, setActiveCategory] = useState<'sales' | 'design' | 'tech'>('sales')
 
   const skillCategories = {

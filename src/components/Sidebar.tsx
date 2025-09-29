@@ -10,6 +10,7 @@ import {
   Phone,
   MapPin
 } from 'lucide-react'
+import PartyBadge from './PartyBadge'
 
 interface SidebarProps {
   activeSection: string
@@ -41,28 +42,28 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange }) => 
             className="text-center"
           >
             <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-              张
+              付
             </div>
-            <h1 className="text-2xl font-bold text-slate-800 mb-2">张三</h1>
-            <p className="text-slate-600 mb-4">前端开发工程师 & 设计师</p>
+            <h1 className="text-2xl font-bold text-slate-800 mb-2">付恒</h1>
+            <p className="text-slate-600 mb-4">航空服务与管理专业毕业生</p>
             
             {/* 基本信息 */}
             <div className="space-y-2 text-sm text-slate-600">
               <div className="flex items-center justify-center gap-2">
                 <User className="w-4 h-4" />
-                <span>男，25岁</span>
+                <span>男，23岁</span>
               </div>
               <div className="flex items-center justify-center gap-2">
-                <GraduationCap className="w-4 h-4" />
+                <PartyBadge className="w-4 h-4" size={16} />
                 <span>中共党员</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>zhangsan@email.com</span>
+                <span>2827162018@qq.com</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>138-0000-0000</span>
+                <span>17888700580</span>
               </div>
               <div className="flex items-center justify-center gap-2">
                 <MapPin className="w-4 h-4" />

@@ -9,6 +9,7 @@ import {
   X,
   User
 } from 'lucide-react'
+import PartyBadge from './PartyBadge'
 
 interface MobileNavProps {
   activeSection: string
@@ -35,7 +36,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ activeSection, onSectionChange })
               <User className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-slate-800">张三</h1>
+              <h1 className="text-lg font-bold text-slate-800">付恒</h1>
               <p className="text-sm text-slate-600">个人简历</p>
             </div>
           </div>
@@ -75,16 +76,20 @@ const MobileNav: React.FC<MobileNavProps> = ({ activeSection, onSectionChange })
                 <div className="p-6 border-b border-slate-200/50 bg-gradient-to-br from-primary-50 to-accent-50">
                   <div className="text-center">
                     <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                      张
+                      付
                     </div>
-                    <h2 className="text-2xl font-bold text-slate-800 mb-2">张三</h2>
-                    <p className="text-slate-600 mb-4">前端开发工程师 & 设计师</p>
+                    <h2 className="text-2xl font-bold text-slate-800 mb-2">付恒</h2>
+                    <p className="text-slate-600 mb-4">航空服务与管理专业毕业生</p>
                     
                     {/* 基本信息 */}
                     <div className="space-y-2 text-sm text-slate-600">
                       <div className="flex items-center justify-center gap-2">
                         <User className="w-4 h-4" />
-                        <span>男，25岁，中共党员</span>
+                        <span>男，23岁</span>
+                      </div>
+                      <div className="flex items-center justify-center gap-2">
+                        <PartyBadge className="w-4 h-4" size={16} />
+                        <span>中共党员</span>
                       </div>
                     </div>
                   </div>

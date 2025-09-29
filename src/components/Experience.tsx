@@ -14,7 +14,11 @@ import {
   ArrowRight
 } from 'lucide-react'
 
-const Experience: React.FC = () => {
+interface ExperienceProps {
+  onSectionChange?: (section: string) => void
+}
+
+const Experience: React.FC<ExperienceProps> = ({ onSectionChange }) => {
   const [activeTab, setActiveTab] = useState<'internship' | 'fulltime'>('fulltime')
 
   const fulltimeExperience = [
@@ -30,7 +34,7 @@ const Experience: React.FC = () => {
       achievements: [
         '完成销售业绩目标120%，获得季度销售冠军',
         '客户满意度达到98%，获得客户高度认可',
-        '参与新员工培训，担任销售技巧培训讲师',
+        '参与客户服务培训，担任服务礼仪培训讲师',
         '建立并维护了200+优质客户关系',
         '连续6个月超额完成销售目标'
       ],
